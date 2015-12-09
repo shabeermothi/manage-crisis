@@ -1,76 +1,87 @@
-<!doctype html>
-<html>
-  <head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="../public/styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="managecrisisApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+    <title>Crisis Management</title>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+    <!-- Bootstrap core CSS -->
+    <link href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-            <a class="navbar-brand" href="#/">managecrisis</a>
-          </div>
+    <!-- Custom styles for this template from http://getbootstrap.com/examples/cover/cover.css-->
+    <link href="public/styles/cover.css" rel="stylesheet">
+</head>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<body>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Crisis Management</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Check-in</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">Crisis Management</h1>
+                <p class="lead">
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#check-in" aria-expanded="false" aria-controls="check-in">
+                        Check-in your location
+                    </a>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign-in" aria-expanded="false" aria-controls="sign-in">
+                        Sign in with Facebook/Google/Pinterest
+                    </button>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#donate" aria-expanded="false" aria-controls="donate">
+                        Donate with Paypal
+                    </button>
+                    <div class="collapse" id="check-in">
+                        <div class="well">
+                            Check-in your location to let your friends know you are safe.
+                        </div>
+                    </div>
+                <div class="collapse" id="sign-in">
+                    <div class="well">
+                        Sign in with Facebook/Google/Pinterest to know what's being discussed in social media about the disaster
+                    </div>
+                </div>
+                <div class="collapse" id="donate">
+                    <div class="well">
+                        Donate with Paypal
+                    </div>
+                </div>
+                </p>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Build with <a href="http://yeoman.io">Yeoman</a></p>
+                </div>
+            </div>
+
         </div>
-      </div>
+
     </div>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+</div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
+<!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="public/bower_components/jquery/dist/jquery.js"></script>
     <script src="public/bower_components/angular/angular.js"></script>
@@ -85,10 +96,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="modules/app.js"></script>
-        <script src="modules/controllers/main.js"></script>
-        <script src="modules/controllers/about.js"></script>
-        <!-- endbuild -->
+
 </body>
 </html>
