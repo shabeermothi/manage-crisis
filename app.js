@@ -21,6 +21,15 @@ app.set('view engine', 'html');
 // Use router for request rewrite
 app.use('/', router);
 
+// for 404 requests
+app.use(function (req, res, next) {
+   res.status('404');
+
+   if (req.accepts('html')) {
+      res.render('404', { title: '404 : Not Found' });
+   }
+});
+
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
