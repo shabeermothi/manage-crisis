@@ -1,6 +1,10 @@
 {
   "name": "managecrisis",
   "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower install"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
