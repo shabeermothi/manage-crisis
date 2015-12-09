@@ -7,7 +7,7 @@ var router = require('./routes/index');
 app.set('port', (process.env.PORT || 5000));
 
 // Set static directory as public
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/modules', express.static(__dirname + '/app/scripts'));
 app.use('/views', express.static(__dirname + '/app/views'));
 

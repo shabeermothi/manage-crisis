@@ -22,17 +22,17 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/dist/jquery.js',
-      'bower_components/angular/angular.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-messages/angular-messages.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+      'public/bower_components/jquery/dist/jquery.js',
+      'public/bower_components/angular/angular.js',
+      'public/bower_components/bootstrap/dist/js/bootstrap.js',
+      'public/bower_components/angular-animate/angular-animate.js',
+      'public/bower_components/angular-cookies/angular-cookies.js',
+      'public/bower_components/angular-messages/angular-messages.js',
+      'public/bower_components/angular-resource/angular-resource.js',
+      'public/bower_components/angular-route/angular-route.js',
+      'public/bower_components/angular-sanitize/angular-sanitize.js',
+      'public/bower_components/angular-touch/angular-touch.js',
+      'public/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
