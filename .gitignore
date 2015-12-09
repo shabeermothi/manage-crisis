@@ -27,7 +27,7 @@ build/Release
 node_modules
 
 # Bower files
-bower_components
+public/bower_components
 
 # Idea files
 .idea
