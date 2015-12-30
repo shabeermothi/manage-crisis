@@ -1,0 +1,12 @@
+<style>
+  .angular-google-map-container {
+    height: 400px;
+    width: 700px;
+  }
+</style>
+<div class="row" ng-if="coordinates">
+  <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+    <ui-gmap-marker coords="map.center.coordinates" click="marker.showLocation" options="marker.options" idkey="marker.id">
+    </ui-gmap-marker>
+  </ui-gmap-google-map>
+</div>
