@@ -14,72 +14,38 @@
 
     <!-- Bootstrap core CSS -->
     <link href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template from http://getbootstrap.com/examples/cover/cover.css-->
-    <link href="public/styles/cover.css" rel="stylesheet">
 </head>
 
-<body>
-
-<div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand">Crisis Management</h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Check-in</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="inner cover">
-                <h1 class="cover-heading">Crisis Management</h1>
-                <p class="lead">
-                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#check-in" aria-expanded="false" aria-controls="check-in">
-                        Check-in your location
-                    </a>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign-in" aria-expanded="false" aria-controls="sign-in">
-                        Sign in with Facebook/Google/Pinterest
-                    </button>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#donate" aria-expanded="false" aria-controls="donate">
-                        Donate with Paypal
-                    </button>
-                    <div class="collapse" id="check-in">
-                        <div class="well">
-                            Check-in your location to let your friends know you are safe.
-                        </div>
-                    </div>
-                <div class="collapse" id="sign-in">
-                    <div class="well">
-                        Sign in with Facebook/Google/Pinterest to know what's being discussed in social media about the disaster
-                    </div>
-                </div>
-                <div class="collapse" id="donate">
-                    <div class="well">
-                        Donate with Paypal
-                    </div>
-                </div>
-                </p>
-            </div>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <p>Build with <a href="http://yeoman.io">Yeoman</a></p>
-                </div>
-            </div>
-
-        </div>
-
+<body ng-app="managecrisisApp">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#manage-crisis-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Manage Crisis</a>
     </div>
+    <div class="collapse navbar-collapse" id="manage-crisis-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="#" ui-sref="home">Home</a></li>
+        <li><a href="#" ui-sref="organization">Organization</a></li>
+        <li><a href="#" ui-sref="resources">Resources</a></li>
+        <li><a href="#" ui-sref="map">Map</a></li>
+        <li><a href="#" ui-sref="stories">Stories</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Check-in</a></li>
+        <li><a href="#">I need help</a></li>
+        <li><a href="#">I can help</a></li>
+      </ul>
+     </div>
+  </div>
+</nav>
 
-</div>
+<div ui-view style="margin-left:100px;"></div>
 
 <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -93,8 +59,22 @@
     <script src="public/bower_components/angular-route/angular-route.js"></script>
     <script src="public/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="public/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="public/bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="public/bower_components/lodash/lodash.js"></script>
+    <script src="public/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <!-- application -->
+<script src="app/ng/geolocation/mc.geo.module.js" type="text/javascript"></script>
+<script src="app/ng/geolocation/mc.geo.service.js" type="text/javascript"></script>
+<script src="app/ng/geolocation/mc.geo.directive.js" type="text/javascript"></script>
+<script src="app/ng/app.js" type="text/javascript"></script>
+<script src="app/ng/controllers/main.js" type="text/javascript"></script>
+<script src="app/ng/controllers/about.js" type="text/javascript"></script>
+<!-- endapplication -->
 
 
 </body>
