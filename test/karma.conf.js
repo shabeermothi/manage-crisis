@@ -32,6 +32,11 @@ module.exports = function(config) {
       'public/bower_components/angular-route/angular-route.js',
       'public/bower_components/angular-sanitize/angular-sanitize.js',
       'public/bower_components/angular-touch/angular-touch.js',
+      'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'public/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'public/bower_components/angular-simple-logger/dist/angular-simple-logger.js',
+      'public/bower_components/lodash/lodash.js',
+      'public/bower_components/angular-google-maps/dist/angular-google-maps.js',
       'public/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
