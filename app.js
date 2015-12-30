@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000));
 
 // Set static directory as public
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/modules', express.static(__dirname + '/app/scripts'));
+app.use('/app', express.static(__dirname + '/app'));
 app.use('/views', express.static(__dirname + '/app/views'));
 
 // Set views folder as folder for templates
@@ -33,3 +33,5 @@ app.use(function (req, res, next) {
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
+
+module.exports = app;

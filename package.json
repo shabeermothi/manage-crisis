@@ -2,8 +2,7 @@
   "name": "managecrisis",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "bower install"
+    "test": "grunt test"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -18,6 +17,7 @@
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
+    "grunt-angular-file-loader": "^1.1.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
@@ -48,8 +48,5 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
