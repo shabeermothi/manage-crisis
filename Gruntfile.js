@@ -19,6 +19,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+  grunt.loadNpmTasks('grunt-angular-file-loader');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -38,8 +40,8 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        files: ['<%= yeoman.app %>/ng/{,*/}*.js'],
+        tasks: ['angularFileLoader'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -201,7 +203,8 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
+        src: ['<%= yeoman.app %>/index.html'
+        ,'<%= yeoman.app %>/ng/**/*.js'],
         ignorePath:  /\.\.\//
       },
       test: {
@@ -220,7 +223,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -423,9 +426,26 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Auto file loader config
+    angularFileLoader: {
+      options: {
+        scripts: ['<%= yeoman.app %>/ng/**/*.js']
+        ,relative: false
+        ,startTag: 'application'
+        ,endTag: 'endapplication'
+      },
+      your_target: {
+        src: ['<%= yeoman.app %>/index.html']
+      }
     }
   });
 
+  grunt.registerTask('server', 'Starts the express server', function () {
+    grunt.log.writeln('Starting express server..');
+    require('./app.js').listen('3000');
+  });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -433,18 +453,15 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
-      'wiredep',
-      'concurrent:server',
-      'postcss:server',
-      'connect:livereload',
-      'watch'
+      'clean:server'
+      ,'wiredep'
+      //'concurrent:server',
+      ,'postcss:server'
+      //'connect:livereload',
+      ,'angularFileLoader'
+      ,'server'
+      ,'watch'
     ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
@@ -467,7 +484,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
-    'cssmin',
+    //'cssmin', // Commented temporarily
     'uglify',
     'filerev',
     'usemin',
